@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Django Static Files </title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="{%  static 'js/script.js' %}"></script>
+</head>
+<body>
+    <h1 class="main"> Django Static Files</h1>
+        <button onclick="sayHello()"> Say Hello </button>
+        <img src="{% static 'img/logo.png' %}" alt="Logo" width="200px">
+</body>
+</html>
