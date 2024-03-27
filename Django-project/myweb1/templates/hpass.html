@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<h1>{{ fdata }}</h1>
+
+<h2>Ages</h2>
+<ul>
+    {% for age_item in age %}
+        <li>{{ age_item }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Programming Languages</h2>
+<ul>
+    {% for lang in lanlist %}
+        <li>{{ lang }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Student Information</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for student in student_info %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.address }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
+
+
+

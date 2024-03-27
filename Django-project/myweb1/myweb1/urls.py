@@ -30,4 +30,5 @@ urlpatterns = [
     path('myhome/', views.myhome),
     path('index/', views.index),
     path('djangohome/', views.djangohome),
+    path('homepass/', views.homepass),
 ]
