@@ -1,0 +1,40 @@
+{
+  "HelpdeskFlow": {
+    "Start": "Receive Call",
+    "Receive Call": {
+      "action": "Log Call",
+      "next": "Check Caller Information"
+    },
+    "Check Caller Information": {
+      "action": "Retrieve Caller Details",
+      "next": "Problem Solving Attempt"
+    },
+    "Problem Solving Attempt": {
+      "action": "Attempt to Solve",
+      "onSuccess": "Log Resolution",
+      "onFailure": "Escalate to Specialist"
+    },
+    "Escalate to Specialist": {
+      "action": "Assign Specialist",
+      "next": "Specialist Resolves"
+    },
+    "Specialist Resolves": {
+      "action": "Problem Solving",
+      "onSuccess": "Log Resolution",
+      "onFailure": "Further Escalation"
+    },
+    "Further Escalation": {
+      "action": "Senior Specialist Review",
+      "next": "Log Outcome"
+    },
+    "Log Resolution": {
+      "action": "Update Ticket Status",
+      "next": "End"
+    },
+    "Log Outcome": {
+      "action": "Update Ticket with Outcome",
+      "next": "End"
+    },
+    "End": "End of Process"
+  }
+}

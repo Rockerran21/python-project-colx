@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title> My Form </title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    Number 1:
+    <input type="number" value="{{ n1 }}" name="num1" required>
+    <br><br>
+    Number 2:
+    <input type="number" value="{{ n2 }}" name="num2" required>
+    <br><br>
+    <input type="submit" value="Add">
+    Result:
+    <input type="text" value="{{ res }}">
+</form>
+</body>
+</html>

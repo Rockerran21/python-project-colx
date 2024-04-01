@@ -31,4 +31,6 @@ urlpatterns = [
     path('index/', views.index),
     path('djangohome/', views.djangohome),
     path('homepass/', views.homepass),
+    path('mygetform/', views.mygetform),
+    path('mypostform/', views.mypostform),
 ]

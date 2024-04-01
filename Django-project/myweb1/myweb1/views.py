@@ -37,3 +37,29 @@ def homepass(request):
         ]
     }
     return render(request, "hpass.html", data)
+def mygetform(request):
+    res = None  # Initialize res to None or some default value
+    try:
+        if request.method == "GET":
+            n1 = int(request.GET.get("num1", 0))  # Default to 0 if not found
+            n2 = int(request.GET.get("num2", 0))  # Default to 0 if not found
+            res = n1 + n2
+    except Exception as e:
+        print(e)  # Log or handle the exception as needed
+    return render(request, "mygetform.html", {"result": res})
+def mypostform(request):
+    res = 0  # Initialize res to None or some default value
+    data={}
+    try:
+        if request.method == "POST":
+            n1 = int(request.POST.get('num1'))
+            n2 = int(request.POST.get('num2'))
+            res = n1 + n2
+            data={
+                'res':res,
+                'n1':n1,
+                'n2':n2,
+            }
+    except :
+        pass
+    return render(request, "mypostform.html", data)
