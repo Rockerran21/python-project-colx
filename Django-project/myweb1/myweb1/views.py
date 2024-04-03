@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from django.http import HttpResponse, HttpResponseRedirect
+from myweb1.forms import UserForm
 def about(request):
     return HttpResponse("<h1>Welcome to the about page</h1>")
 
@@ -63,3 +64,54 @@ def mypostform(request):
     except :
         pass
     return render(request, "mypostform.html", data)
+
+def actionsubmit(request):
+    res = 0  # Initialize res to None or some default value
+    data={}
+    try:
+        if request.method == "POST":
+            n1 = int(request.POST.get('num1'))
+            n2 = int(request.POST.get('num2'))
+            res = n1 + n2
+            data={
+                'res':res,
+                'n1':n1,
+                'n2':n2,
+            }
+    except :
+        pass
+    return render(request, "actionsubmit.html", data)
+
+def renderpage(request):
+      if request.method == "GET":
+          output = request.GET.get('output')
+          return render(request, "thankyou.html",{'output':output})
+def redirectform(request):
+    try:
+        if request.method == "GET":
+            res=0
+            n1 = int(request.GET.get('num1'))
+            n2 = int(request.GET.get('num2'))
+            res = n1 + n2
+            url="/renderpage/?output={}".format(res)
+            return HttpResponseRedirect(url)  # Redirect to the url view
+    except:
+        pass
+    return render(request, "mygetform.html",{'res':res})
+
+def userform(request):
+    res=0
+    fn=Userform()
+    data=('myform':fn)
+    try:
+        if request.method == "POST":
+            n1 = int(request.POST.get('num1'))
+            n2 = int(request.POST.get('num2'))
+            res = n1 + n2
+            data={
+                'res':res,
+                'myform':fn
+            }
+    except:
+        pass
+    return render(request, "formclass.html",data)

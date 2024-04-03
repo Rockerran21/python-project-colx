@@ -33,4 +33,7 @@ urlpatterns = [
     path('homepass/', views.homepass),
     path('mygetform/', views.mygetform),
     path('mypostform/', views.mypostform),
+    path('actionsubmit', views.actionsubmit,name = "actionsubmit"),
+    path('renderpage/', views.renderpage),
+    path('redirectform/', views.redirectform),
 ]

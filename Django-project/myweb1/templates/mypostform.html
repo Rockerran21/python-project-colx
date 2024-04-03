@@ -3,7 +3,7 @@
     <title> My Form </title>
 </head>
 <body>
-<form action="" method="post">
+<form action="{% url 'actionsubmit' %}" method="post">
     {% csrf_token %}
     Number 1:
     <input type="number" value="{{ n1 }}" name="num1" required>
